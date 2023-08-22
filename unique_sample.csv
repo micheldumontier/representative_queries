@@ -1,0 +1,62 @@
+query
+CONSTRUCT { ?s ?p ?o . } WHERE { SERVICE <http://bio2rdf.org/sparql> { ?s ?p ?o . } } LIMIT 1
+"SELECT DISTINCT ?prefix WHERE { { SELECT DISTINCT ?p WHERE { ?s ?p ?o . } } . BIND(IF(CONTAINS(STR(?p), ""#""), REPLACE(STR(?p), ""#[^#]*$"", ""#""), REPLACE(STR(?p), ""/[^/]*$"", ""/"")) AS ?prefix) }"
+select * where {[] a ?Concept} LIMIT 100&format=text/html&timeout=0&debug=on&run= Run Query 
+"With the advantages of utilizing a job recruiter weighed towards the disadvantages you'll discover that most often using a job headhunter is not 
+the very best option for you or your organization. Whhen Mr.
+Delbart’s job att Orajge CH turned redundant, he was employed 
+as Head of Support for Transport Publics Genevois, a personal 
+company offering transport facilities to the public.
+Let me let you know slightly about Mr. Delbart’s career before analyzing 
+the common principles that it is best to observe.
+Since 2009, Betts Recruiting has been serving to veterans 
+make career dreams come true and serving to corporations scale 
+for growth. At the time, he was inquisitive about having a technical profession related to Information Technology (IT) improvement and maintenance.
+
+Having learned about the value of an MBA program from a colleague, he next started 
+finding out at Rushmore University, where he centered on the idea and follow of promoting, sustainable growth, the Internet, 
+andd IT. An unexpected benefit of his MBA program was learning the right way to be simpler in researching and understanding 
+new topics on his personal, making iit easier for 
+him to prokceed his schooling after graduating.Seeking much more variety and scope for his profession, he joined with a associate to launch a 
+web design agency.
+
+Right now, it haas yet to point out up in current government efficiency knowledge,
+annd truly, tthe latest jobs report showed even a slight drop within the number of financial professionals.
+Even if the person you’re talking to doesn’t endure from that 
+specific problem, by specializing in problems moderately than some bland recitation about what you ""do"", you dramatically increase 
+the chance that they will remember you. You will want to think aout your consolation level with different coaching strategies, comparable to speaking in entrance of 
+massive groups, one-on-one coaching, talking over the telephone, corresponding 
+by electronic mail or another platform, and find the supply platform that works finest for you.
+The point is that if you want to get someone’s attention yyou should concentrate on the 
+problems that you simply clear up. In some unspecified time in the future 
+the one distinction between you and the latest employee 
+is thaqt you've got more experience. If a headhunter contacts you about a specific job, the primary question that 
+you need to pose to him or her is ""How many people have you positioned with this employer, the one you might be contacting me about, previously 12 months? They're lawyers or attorney recruiters who help the unemployed land a job.
+
+Who are you aware who is aware of somebody who knows some else at the company you might be serious about? Thus, somebody who began out handling a single aspect of the nationwide actions for the company’s operations would finally handle only a small portion of that original side. Iris posted on the Gmail Help forum instructions for determining whether or not somebody is forwarding mail to the account. Next, he left Swisscom to join a new cellular vendor, Orange CH, which allowed him the opportunity to assist construct a company from scratch. The subsequent method and likewise the newest solution to recruit help is to make use of a web-based service. As I considered his career, I might clearly see a method out for people who discover themselves in an excessively circumscribed, ever-narrowing job in an more and more specialized industry where little differentiation seems to be attainable. All that’s left for us to do now could be to send out our best agents out to apprehend the scofflaws, now that we've got uncovered their nefarious plot.
+
+She might attempt to get attention by saying, ""I’m 
+a marketing advisor."" In a single ear and out the other. However, every reply follows the same format off hooking consideration by focusing on an issue. Use an alternate digital or paper format. Ask your self: Do you really need to use Executive Search Services to search out your nnew leader? Instead, at this time's' most successful businesses are turning to skilled headhunters tto finish their govt search in China. Search for headhunter positions on websites like Glassdoor, Indeed, or LinkedIn. Also feedback in a LinkedIn (or different social media) saying 'I am involved' or 'I qualify' do not yield any outcomes. While the Deell method is great forr handling progress, it can be stultifying for the individuals whose jobs grow to be smaller and smaller in scope as the company’s imension will increase. Right now, there are still more jobs which are cut than new hires. Whether or not you ever have that type of alternative, you'll turn out to be effectively prepared to take on thrilling new roles and to be mire profitable on the older ones.&format=text/html&timeout=0&debug=on&run=Go"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://taxonomy.bio2rdf.org/fct/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://cu.biomodels.bio2rdf.org/fct/"")) } } LIMIT 1"
+"SELECT  ?g
+WHERE
+  { GRAPH ?g
+      { ?sub  ?pred  ?obj }
+  }
+LIMIT   10
+"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://chem2bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://interpro.bio2rdf.org/fct/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://orphanet.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://clinicaltrials.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://download.bio2df.org/release/4/sider/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://go.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://ncbigene.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://mgi.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://omim.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://drugbank.bio2rdf.org/fct/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://hgnc.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://chebi.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://homologene.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://cu.affymetrix.bio2rdf.org/fct/"")) } } LIMIT 1"

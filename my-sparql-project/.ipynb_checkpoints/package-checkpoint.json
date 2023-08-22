@@ -1,0 +1,17 @@
+{
+  "name": "my-sparql-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "papaparse": "^5.4.1",
+    "sparqljs": "^3.7.1"
+  }
+}

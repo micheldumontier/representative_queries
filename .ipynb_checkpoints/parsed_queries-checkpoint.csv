@@ -1,0 +1,37 @@
+parsed_query
+CONSTRUCT { ?s ?p ?o . } WHERE { SERVICE <http://bio2rdf.org/sparql> { ?s ?p ?o . } } LIMIT 1
+"SELECT DISTINCT ?prefix WHERE { { SELECT DISTINCT ?p WHERE { ?s ?p ?o . } } . BIND(IF(CONTAINS(STR(?p), ""#""), REPLACE(STR(?p), ""#[^#]*$"", ""#""), REPLACE(STR(?p), ""/[^/]*$"", ""/"")) AS ?prefix) }"
+CONSTRUCT { ?s ?p ?o . } WHERE { SERVICE <http://bio2rdf.org/sparql> { ?s ?p ?o . } } LIMIT 1
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://taxonomy.bio2rdf.org/fct/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://cu.biomodels.bio2rdf.org/fct/"")) } } LIMIT 1"
+"SELECT  ?g
+WHERE
+  { GRAPH ?g
+      { ?sub  ?pred  ?obj }
+  }
+LIMIT   10"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://chem2bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://interpro.bio2rdf.org/fct/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://orphanet.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://clinicaltrials.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://download.bio2df.org/release/4/sider/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://go.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://go.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://orphanet.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://ncbigene.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://mgi.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://omim.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://interpro.bio2rdf.org/fct/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://drugbank.bio2rdf.org/fct/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://hgnc.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://chebi.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://chem2bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://homologene.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://cu.affymetrix.bio2rdf.org/fct/"")) } } LIMIT 1"
+"SELECT ?s WHERE { GRAPH ?g { ?s ?p ?o . FILTER(STRSTARTS(STR(?s), ""http://chebi.bio2rdf.org/"")) } } LIMIT 1"
+"SELECT  ?g
+WHERE
+  { GRAPH ?g
+      { ?sub  ?pred  ?obj }
+  }
+LIMIT   10"
