@@ -21,10 +21,11 @@ async function executeQuery(query) {
 
 async function main() {
   // Read SPARQL queries from input CSV file and execute them one by one
-  const inputCsvFile = 'unique_queries.csv';
-  const outputCsvFile = '_yyy.csv';
+  // const inputCsvFile = 'unique_queries.csv';
+  const inputCsvFile = '../data/unique_bio2rdf_sparql_logs_with_counts.csv';
+  const outputCsvFile = 'parsed_queries_all.csv';
 
-  const batchSize = 10; // Number of queries to accumulate before writing to CSV
+  const batchSize = 1000; // Number of queries to accumulate before writing to CSV
 
   const csvData = [];
   let processedQueries = 0;
@@ -34,6 +35,7 @@ async function main() {
   const readStream = fs.createReadStream(inputCsvFile).pipe(csvParser());
 
   readStream.on('data', async (row) => {
+      
     const sparqlQuery = row['query']; // Adjust the column name as per your input CSV format
 
     // Execute SPARQL query and collect the result
@@ -42,14 +44,14 @@ async function main() {
     // Add the result to the csvData array
     csvData.push({ Query: sparqlQuery, Parsed_Query: parsedQuery });
 
-    processedQueries++;
+    // processedQueries++;
 
-    // If the batch size is reached, write the batch to the output CSV file
-    if (processedQueries % batchSize === 0) {
-      await writeBatchToCsv(csvData, outputCsvFile);
-      console.log(`Processed ${processedQueries} queries.`);
-      csvData.length = 0; // Clear the array
-    }
+    // // If the batch size is reached, write the batch to the output CSV file
+    // if (processedQueries % batchSize === 0) {
+    //   await writeBatchToCsv(csvData, outputCsvFile);
+    //   console.log(`Processed ${processedQueries} queries.`);
+    //   csvData.length = 0; // Clear the array
+    // }
   });
 
   readStream.on('end', async () => {

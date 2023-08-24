@@ -12,6 +12,7 @@
   "dependencies": {
     "csv-parser": "^3.0.0",
     "csv-stringify": "^6.4.0",
+    "fast-csv": "^4.3.6",
     "p-map": "^6.0.0",
     "papaparse": "^5.4.1",
     "progress": "^2.0.3",

@@ -1,48 +1,58 @@
 const fs = require('fs');
+const fastcsv = require('fast-csv');
 const SparqlParser = require('sparqljs').Parser;
-const csvParser = require('csv-parser');
-const { unparse } = require('papaparse');
+const util = require('util');
 
 // Create a new instance of the SPARQL parser
 const parser = new SparqlParser();
 
-// Function to execute a single SPARQL query and return the result
-async function executeQuery(query) {
-  try {
-    const parsedQuery = parser.parse(query);
-    // Here, you can execute the parsed query using your preferred SPARQL endpoint or RDF library
-    // For the sake of example, we will just return the parsed query as a string
-    return JSON.stringify(parsedQuery);
-  } catch (error) {
-    console.error('Error parsing query:', query);
-    return 'Error parsing the query.';
+// Paths to input CSV file and output file
+const inputFilePath = 'input.csv';  // Replace with your input CSV file path
+const outputFilePath = 'output.txt'; // Replace with your output file path
+
+// Create a readable stream from the CSV file
+const csvStream = fs.createReadStream(inputFilePath);
+
+// Create a writable stream for the output file
+const outputStream = fs.createWriteStream(outputFilePath);
+
+// Helper function to display the variable names
+function displayVariables(variables) {
+  if (Array.isArray(variables)) {
+    return variables.map(v => v.value).join(' ');
+  } else {
+    // If variables is a Wildcard object, return it as is
+    return variables;
   }
 }
 
-async function main() {
-  const inputCsvFile = 'unique_queries.csv';
-  const outputCsvFile = '_yyy.csv';
+// Create a CSV parser stream
+const csvParser = fastcsv.parse({ headers: true });
 
-  const csvData = [];
+// Pipe the CSV stream to the CSV parser
+csvStream.pipe(csvParser);
 
-  // Use stream processing to read rows from the input CSV file
-  const stream = fs.createReadStream(inputCsvFile)
-    .pipe(csvParser({ headers: true }));
+// Process each row of the CSV file
+csvParser.on('data', async (row) => {
+  const sparqlQuery = row.query; // Assuming 'query' is the column name in the CSV
 
-  // Process each row using the stream
-  for await (const row of stream) {
-    const sparqlQuery = row['query'];
+  // Parse the SPARQL query
+  const parsedQuery = parser.parse(sparqlQuery);
 
-    const parsedQuery = await executeQuery(sparqlQuery);
+  // Update variables and triples to show actual values
+  parsedQuery.variables = displayVariables(parsedQuery.variables);
+  parsedQuery.where[0].triples = parsedQuery.where[0].triples.map(triple => displayVariables(triple));
 
-    csvData.push({ Query: sparqlQuery, Parsed_Query: parsedQuery });
-  }
+  // Convert the parsed query object to a string
+  const parsedQueryStr = util.inspect(parsedQuery, { depth: null, colors: false });
 
-  // Write all data to the output CSV file in one go
-  const csv = unparse(csvData, { header: true, delimiter: ',' });
-  fs.writeFileSync(outputCsvFile, csv);
+  // Write the original query and parsed query to the output file
+  await new Promise((resolve) => {
+    outputStream.write(`Original Query:\n${sparqlQuery}\n\nParsed Query:\n${parsedQueryStr}\n\n`, resolve);
+  });
+});
 
-  console.log('All SPARQL queries executed and results written to output CSV file.');
-}
-
-main();
+// Close the output stream after processing all rows
+csvParser.on('end', () => {
+  outputStream.end();
+});
